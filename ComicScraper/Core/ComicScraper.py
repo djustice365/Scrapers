@@ -3,10 +3,16 @@ from ScraperUtils.ScraperUtils import Utils
 
 class URL(Enum):
     opm = "https://manganelo.com/manga/read_one_punch_man_manga_online_free3"
+    sds = "https://manganelo.com/manga/read_nanatsu_no_taizai_manga_online_free"
+    gs  = "https://mangakakalot.com/manga/hgj2047065412"
+    mha = "https://manganelo.com/manga/read_boku_no_hero_academia_manga"
+    dbs = "https://manganelo.com/manga/dragon_ball_super"
 
 
 class ComicScraper(Utils):
-    def __init__(self, *args):
+    def __init__(self, debug, *args):
+        self.debug = debug
+        print("Starting scrape")
         for arg in args:
             self.scrape(URL[arg].value)
         pass
