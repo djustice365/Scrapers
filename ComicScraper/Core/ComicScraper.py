@@ -12,28 +12,27 @@ class URL(Enum):
 class ComicScraper(Utils):
     def __init__(self, debug, *args):
         self.debug = debug
-        print("Starting scrape")
-        for arg in args:
-            self.scrape(URL[arg].value)
-        pass
+        self.args = args
 
-    def scrape(self, url):
-        #TODO: Iterate over a list of sites to scrape, print if there is a new one
-        soup = self.create_soup_from_url(url)
-        elements = self.find_all('div', soup)
-        count = 0
-        for element in elements:
-            if count > 1:
-                break
-            str = element.get("class")
-            if str is not None:
-                if "row" in str:
-                    if count == 1:
-                        spans = self.find_all('span', element)
-                        print("--")
-                        print("--")
-                        print(self.get_title_string(spans[0].find('a')) + " | " + self.get_title_string(spans[2]))
-                        print("--")
-                        print("--")
-                    count += 1
+
+    def scrape(self):
+        print("Starting scrape")
+        for arg in self.args:
+            soup = self.create_soup_from_url(URL[arg].value)
+            elements = self.find_all('div', soup)
+            count = 0
+            for element in elements:
+                if count > 1:
+                    break
+                str = element.get("class")
+                if str is not None:
+                    if "row" in str:
+                        if count == 1:
+                            spans = self.find_all('span', element)
+                            print("--")
+                            print("--")
+                            print(self.get_title_string(spans[0].find('a')) + " | " + self.get_title_string(spans[2]))
+                            print("--")
+                            print("--")
+                        count += 1
 

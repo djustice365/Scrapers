@@ -25,6 +25,9 @@ class Utils:
     def get_title_string(self, soup):
         return soup.get('title')
 
+    def scrape(self):
+        raise NotImplementedError("Scraper must implement this method")
+
     def log(self, msg):
         if self.debug:
             print(msg)
