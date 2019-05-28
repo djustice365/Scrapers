@@ -22,7 +22,5 @@ def parse_args():
     return parser.parse_args()
 
 
-#test_scrape = ComicScraper(True, "opm", "mha", "sds", "gs", "dbs")
-
 if __name__ == '__main__':
     main()
