@@ -7,7 +7,7 @@ from TVScraper.TVScraper import TVScraper
 class ScraperType(Enum):
     comic = ComicScraper(False)
     movie = MovieScraper(False)
-    tv = TVScraper(True)
+    tv = TVScraper(False)
 
 
 def main():

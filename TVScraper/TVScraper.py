@@ -9,7 +9,7 @@ class TVScraper(Utils):
 
     def scrape(self, args):
         for arg in args.split(","):
-            print("Starting movie scrape for: " + arg)
+            print("Starting tv scrape for: " + arg)
             soup = self.create_soup_from_url(self.base + arg.replace(" ", "+"))
             self.log("Searching url: " + self.base + arg.replace(" ", "+"))
             elements = self.find_all('div', soup)
