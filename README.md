@@ -4,10 +4,10 @@ Scrapes for (specific) comics, tv, or movies on specific websites.
 
 ## How to use
 ### Windows
-python controller.py -s <comic|tv|movie> -a "<arguments>"
+python controller.py -s {comic|tv|movie} -a "{arguments}"
 
 ### Linux/Mac
-./controller.py -s <comic|tv|movie> -a "<arguments>"
+./controller.py -s {comic|tv|movie} -a "{arguments}"
   
 -a requires double quotes
 if using multiple arguments, -a requires a comma delimited list with no spaces before or after the argument. For example:
