@@ -31,3 +31,5 @@ Prints out any matching search results.
 Uses arguments passed in as search keywords with a TV filter on a specific website.
 
 Prints out any matching search results.
+
+TODO: Check the latest season and print out latest episode
