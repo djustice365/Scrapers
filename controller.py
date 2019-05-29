@@ -12,8 +12,11 @@ class ScraperType(Enum):
 
 def main():
     args = parse_args()
-    ScraperType[args.scraper].value.scrape(args.args)
-
+    if args.args is None:
+        ScraperType[args.scraper].value.scrape()
+    elif args.args is not None:
+        ScraperType[args.scraper].value.scrape(args.args)
+    
 
 def parse_args():
     parser = ArgumentParser(description='Scrapes the web')
@@ -22,7 +25,7 @@ def parse_args():
     parser.add_argument('-a', '--args', required=False, help='Comma delimited list that you would like to pass to the Scraper. No spaces inbetween commas and args')
 
     parsed_args = parser.parse_args()
-
+    print(parsed_args)
     # Validate certain args
     if parsed_args.scraper == 'movie' and parsed_args.args is None:
         parser.error("Movie scraper requires additional arguments passed with -a/--args to use as search keywords")
