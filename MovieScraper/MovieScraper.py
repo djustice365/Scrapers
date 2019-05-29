@@ -2,9 +2,9 @@ from ScraperUtils.ScraperUtils import Utils
 import re
 
 class MovieScraper(Utils):
-    def __init__(self, debug, *args):
+    def __init__(self, debug):
         self.debug = debug
-        self.base = "https://www6.putlockertv.to/search?keyword="
+        self.base = "https://www6.putlockertv.to/filter?type[]=movie&keyword="
 
 
     def scrape(self, args):

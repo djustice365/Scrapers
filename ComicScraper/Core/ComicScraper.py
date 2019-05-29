@@ -10,14 +10,13 @@ class URL(Enum):
 
 
 class ComicScraper(Utils):
-    def __init__(self, debug, *args):
+    def __init__(self, debug):
         self.debug = debug
-        self.args = args
 
 
-    def scrape(self):
-        print("Starting scrape")
-        for arg in self.args:
+    def scrape(self, args):
+        for arg in args.split(","):
+            print("Starting comic scrape for: " + arg)
             soup = self.create_soup_from_url(URL[arg].value)
             elements = self.find_all('div', soup)
             count = 0
