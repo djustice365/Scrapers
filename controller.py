@@ -13,7 +13,10 @@ class ScraperType(Enum):
 def main():
     args = parse_args()
 
-    ScraperType[args.scraper].value.scrape(args.args)
+    if args.scraper == "comic":
+        ScraperType[args.scraper].value.scrape("opm,mha,sds,gs,dbs")
+    else:
+        ScraperType[args.scraper].value.scrape(args.args)
 
 
 def parse_args():
@@ -25,8 +28,8 @@ def parse_args():
     parsed_args = parser.parse_args()
     print(parsed_args)
     # Validate certain args
-    if parsed_args.scraper == 'movie' and parsed_args.args is None:
-        parser.error("Movie scraper requires additional arguments passed with -a/--args to use as search keywords")
+    if (parsed_args.scraper == 'movie' or parsed_args.scraper == 'tv') and parsed_args.args is None:
+        parser.error("Movie and TV scraper requires additional arguments passed with -a/--args to use as search keywords")
 
     return parsed_args
 
