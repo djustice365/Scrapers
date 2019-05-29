@@ -15,21 +15,28 @@ if using multiple arguments, -a requires a comma delimited list with no spaces b
 controller.py -s movie -a "test1,test2,test3"
 
 However, spaces are allowed in-between words i.e -a "infinity war"
-  
-## Comic Scraper
+
+## Overview of Scrapers
+
+### Comic Scraper
 Currently hard coded to speciic comics that I am keeping up with.
 arguments is optional
 
 Prints out the latest comic along with release date
 
-## Movie Scraper
+### Movie Scraper
 Uses arguments passed in as search keywords with a movie filter on a specific website.
 
 Prints out any matching search results.
 
-## TV Scraper
+### TV Scraper
 Uses arguments passed in as search keywords with a TV filter on a specific website.
 
 Prints out any matching search results.
 
-TODO: Check the latest season and print out latest episode
+## TODO
+### Movie Scraper
+Print quality (HD, cam, etc.)
+
+### TV Scraper
+Check the latest season and print out latest episode
