@@ -2,6 +2,7 @@ from enum import Enum
 from ScraperUtils.ScraperUtils import Utils
 
 class URL(Enum):
+    one = "https://manganelo.com/manga/read_onepunchman_one"
     opm = "https://manganelo.com/manga/read_one_punch_man_manga_online_free3"
     sds = "https://manganelo.com/manga/read_nanatsu_no_taizai_manga_online_free"
     gs  = "https://mangakakalot.com/manga/hgj2047065412"
