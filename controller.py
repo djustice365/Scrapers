@@ -14,7 +14,7 @@ def main():
     args = parse_args()
 
     if args.scraper == "comic":
-        ScraperType[args.scraper].value.scrape("one,opm,mha,sds,gs,dbs")
+        ScraperType[args.scraper].value.scrape("one,opm,mha,sds,gs,dbs,aot")
     else:
         ScraperType[args.scraper].value.scrape(args.args)
 

@@ -8,6 +8,7 @@ class URL(Enum):
     gs  = "https://mangakakalot.com/manga/hgj2047065412"
     mha = "https://manganelo.com/manga/read_boku_no_hero_academia_manga"
     dbs = "https://manganelo.com/manga/dragon_ball_super"
+    aot = "https://manganelo.com/manga/kxqh9261558062112"
 
 
 class ComicScraper(Utils):
